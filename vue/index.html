@@ -1,0 +1,31 @@
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Pr_vue</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container" id="app">
+      <div class="form_fields">
+          <input v-model="message" type="text">
+          <input v-on:click="Api()" type="button" value="Send">
+      </div>
+       <div class="films" v-for="result in results">
+        <div class="block_film">
+          <div class="card">
+              <img v-bind:src="result.Poster" alt="img" /> 
+          <div class="tty">
+            <p>Title: {{ result.Title }}.</p><br/>
+            <p>Type: {{ result.Type }}.</p><br/>
+            <p>Year: {{ result.Year }}.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script> 
+    <script src="https://cdn.jsdelivr.net/vue.resource/1.2.1/vue-resource.min.js"></script> 
+    <script src="js.js"></script>
+  </body>
+</html>
